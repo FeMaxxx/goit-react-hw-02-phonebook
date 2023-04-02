@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Formik, ErrorMessage } from "formik";
 import { FormBox, Title, Input, Label, Button, Eror } from "./PBForm.styled";
 import { object, string, number } from "yup";
@@ -40,4 +41,8 @@ export const PBForm = ({ onSubmit }) => {
       </FormBox>
     </Formik>
   );
+};
+
+PBForm.prototype = {
+  onSubmit: PropTypes.func.isRequired,
 };
