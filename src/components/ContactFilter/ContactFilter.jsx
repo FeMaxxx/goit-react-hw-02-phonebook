@@ -13,7 +13,7 @@ export const ContactFilter = ({ value, onChange }) => {
   );
 };
 
-ContactFilter.prototype = {
+ContactFilter.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

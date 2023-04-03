@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const ContactsBox = styled.div`
+export const Contacts = styled.div`
   padding: 10px;
   width: 100%;
 

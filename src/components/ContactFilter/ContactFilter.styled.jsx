@@ -17,7 +17,7 @@ export const Title = styled.p``;
 export const Input = styled.input`
   padding: 5px 10px;
   margin-top: 5px;
-  width: 200px;
+  width: 175px;
   cursor: text;
 
   background: none;

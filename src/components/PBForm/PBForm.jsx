@@ -43,6 +43,6 @@ export const PBForm = ({ onSubmit }) => {
   );
 };
 
-PBForm.prototype = {
+PBForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };

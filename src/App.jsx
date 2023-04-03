@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import shortid from "shortid";
+
 import { PhoneBook } from "components/PhoneBook";
 import { PBForm } from "components/PBForm";
-import { Contacts } from "components/Contacts";
-import shortid from "shortid";
+import { ContactFilter } from "components/ContactFilter";
+import { ContactList } from "components/ContactList";
+
+import { Contacts, Title } from "components/Contacts";
 
 class App extends Component {
   state = {
@@ -20,7 +24,7 @@ class App extends Component {
     const { contacts } = this.state;
 
     const haveContact = contacts.some((contact) => {
-      return contact.name === name;
+      return contact.name.toLowerCase() === name.toLowerCase();
     });
 
     if (haveContact) {
@@ -70,12 +74,14 @@ class App extends Component {
       <>
         <PhoneBook title="PhoneBook">
           <PBForm onSubmit={this.addContact} />
-          <Contacts
-            contacts={visibleContacts}
-            filter={this.changeFilter}
-            onDeleteContact={this.deleteContact}
-            value={filter}
-          />
+          <Contacts>
+            <Title>Contacts</Title>
+            <ContactFilter onChange={this.changeFilter} value={filter} />
+            <ContactList
+              contacts={visibleContacts}
+              onDeleteContact={this.deleteContact}
+            />
+          </Contacts>
         </PhoneBook>
       </>
     );
