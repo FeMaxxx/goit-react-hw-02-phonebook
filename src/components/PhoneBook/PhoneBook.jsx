@@ -12,6 +12,6 @@ export const PhoneBook = ({ title, children }) => {
 };
 
 PhoneBook.propTypes = {
-  title: PropTypes.func.isRequired,
-  children: PropTypes.element,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.any,
 };
